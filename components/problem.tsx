@@ -317,7 +317,7 @@ export default function EnhancedProblemSection() {
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.3, delay: i * 0.05 }}
-                        // viewport={{ once: true }}
+                        viewport={{ once: true }}
                         className="bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-white/50  transition-all duration-300"
                       >
                         <div className="flex items-center gap-3 mb-2">
@@ -415,7 +415,7 @@ export default function EnhancedProblemSection() {
                               key={i}
                               initial={{ opacity: 0, x: -20 }}
                               animate={{ opacity: 1, x: 0 }}
-                              // viewport={{ once: true }}
+                              viewport={{ once: true }}
                               transition={{ duration: 0.3, delay: i * 0.05 }}
                               className="bg-slate-50 rounded-xl p-4 border border-slate-200  transition-colors duration-200"
                             >

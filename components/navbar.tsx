@@ -18,7 +18,6 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
     }
-
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -47,12 +46,8 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed z-50 backdrop-blur-md border border-white/10 shadow-lg transition-all duration-300 ease-in-out
-       top-0 sm:top-2
-       left-0 right-0 sm:left-4 sm:right-4
-       bg-white/10 rounded-none sm:rounded-xl w-full sm:w-fit sm:ml-auto sm:mr-auto
-       ${isScrolled ? "sm:lg:left-24 sm:lg:right-24" : "sm:left-6 sm:right-6"}
-     `}
+      className={`fixed z-50 backdrop-blur-md transition-all duration-300 ease-in-out 
+        ${isScrolled ? "top-2 left-24 right-24 bg-black/10 rounded-full" : "top-0 left-0 right-0 bg-white/0 rounded-none"}`}
     >
       <div
         className={`flex items-center justify-between w-full transition-all duration-300 ${
@@ -60,7 +55,7 @@ export default function Navbar() {
         }`}
       >
         {/* Left - Logo */}
-        <div className="relative flex items-center">
+        <div className="flex items-center">
           <Link href="/" className="block ml-2 sm:ml-4">
             <Image
               src="/medikloud-logo.png"
@@ -74,32 +69,34 @@ export default function Navbar() {
         </div>
 
         {/* Center - Nav Links (Desktop only) */}
-        <div
-          className={`hidden lg:flex items-center transition-all ml-2 duration-300 ${
-            isScrolled ? "space-x-4 text-sm" : "space-x-6 text-base"
-          } font-medium text-white/90 whitespace-nowrap`}
-        >
-          {[
-            ["#mission", "Our Mission"],
-            ["#problem", "The Problem"],
-            ["#solution", "Our Solution"],
-            ["#how-it-works", "How It Works"],
-          ].map(([href, label]) => (
-            <Link
-              key={href}
-              href={href}
-              className={`transition duration-300 ${
-                activeLink === href ? "text-primary font-semibold" : "text-gray-700 hover:text-primary"
-              }`}
-              onClick={(e) => handleNavLinkClick(e, href)}
-            >
-              {label}
-            </Link>
-          ))}
+        <div className="hidden lg:flex flex-1 justify-center">
+          <div
+            className={`flex items-center transition-all duration-300 ${
+              isScrolled ? "space-x-4 text-sm" : "space-x-6 text-base"
+            } font-medium text-white/90 whitespace-nowrap`}
+          >
+            {[
+              ["#mission", "Our Mission"],
+              ["#problem", "The Problem"],
+              ["#solution", "Our Solution"],
+              ["#how-it-works", "How It Works"],
+            ].map(([href, label]) => (
+              <Link
+                key={href}
+                href={href}
+                className={`transition duration-300 ${
+                  activeLink === href ? "text-primary font-semibold" : "text-gray-700 hover:text-primary"
+                }`}
+                onClick={(e) => handleNavLinkClick(e, href)}
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
         </div>
 
         {/* Right - Contact Button & Mobile Menu Toggle */}
-        <div className="flex items-center justify-end gap-2 sm:gap-3 ml-auto">
+        <div className="flex items-center justify-end gap-2 sm:gap-3">
           <Dialog open={contactDialogOpen} onOpenChange={setContactDialogOpen}>
             <DialogTrigger className="text-xs sm:text-sm bg-cyan-500 hover:bg-cyan-600 ml-4 text-white py-1.5 sm:py-2 px-3 sm:px-4 rounded-full transition-all duration-300">
               Contact Us
@@ -122,9 +119,9 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out bg-white/10 backdrop-blur-md rounded-b-2xl
-         ${mobileMenuOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"}
-       `}
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out bg-white/10 backdrop-blur-md ${
+          isScrolled ? "rounded-b-xl" : "rounded-b-2xl"
+        } ${mobileMenuOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"}`}
       >
         <div className="px-4 py-2 space-y-1">
           {[
@@ -136,7 +133,7 @@ export default function Navbar() {
             <Link
               key={href}
               href={href}
-              className={`block px-4 py-2 rounded-lg transition duration-200  text-sm ${
+              className={`block px-4 py-2 rounded-lg transition duration-200 text-sm ${
                 activeLink === href ? "bg-primary text-white font-medium" : "text-gray-700 hover:bg-gray-100"
               }`}
               onClick={(e) => handleNavLinkClick(e, href)}

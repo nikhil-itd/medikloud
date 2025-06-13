@@ -36,7 +36,7 @@ export default function Mission() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
             <Image
-              src="/smartpharma.jpg"
+              src="/virtualpharma.png"
               alt="Modern Hospital Pharmacy"
               width={600}
               height={500}

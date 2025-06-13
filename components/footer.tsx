@@ -14,8 +14,8 @@ export default function Footer() {
   return (
     <footer className="bg-blue-900 text-white">
       <div className="container mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
+         {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          
           <div>
             <h3 className="text-2xl font-bold text-cyan-400 mb-4">MediKloud</h3>
             <p className="text-blue-200 mb-6 leading-relaxed">
@@ -49,7 +49,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
+        
           <div>
             <h4 className="text-lg font-semibold mb-4 text-cyan-400">Quick Links</h4>
             <ul className="space-y-3">
@@ -76,7 +76,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
+         
           <div>
             <h4 className="text-lg font-semibold mb-4 text-cyan-400">Services</h4>
             <ul className="space-y-3">
@@ -103,7 +103,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          
           <div>
             <h4 className="text-lg font-semibold mb-4 text-cyan-400">Contact Info</h4>
             <div className="space-y-3">
@@ -120,12 +120,12 @@ export default function Footer() {
                 <span className="text-blue-200">
                   address .....................
                   <br />
-                  {/* district/india */}
+                  
                 </span>
               </div>
             </div>
           </div>
-        </div>
+        </div>  */}
 
         <div className="border-t border-blue-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">

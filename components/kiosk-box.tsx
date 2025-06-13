@@ -11,21 +11,21 @@ export default function KioskBox() {
     <div className="pt-32 pb-20 relative overflow-hidden section-fade-in bg-gradient-to-br from-blue-50 via-cyan-50 to-white">
       <div className="container mx-auto px-6 z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="text-center lg:text-left">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-blue-600">
+          <div className="text-center lg:text-left ">
+            {/* <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-blue-600">
               Medi<span className="text-cyan-500">Kloud</span>
-            </h1>
+            </h1> */}
 
-            <div className="relative mb-6" style={{ height: "60px" }}>
+            <div className="relative mb-6" style={{ height: "80px" }}>
               <TypingAnimation
                 duration={100}
-                className="absolute top-0 left-0 w-full text-2xl md:text-3xl font-semibold text-gray-800"
+                className="absolute top-0 left-0 w-full text-2xl md:text-4xl font-semibold text-gray-800"
               >
                 Revolutionizing Hospital Pharmacies with Smart AI
               </TypingAnimation>
             </div>
 
-            <p className="text-lg md:text-xl mb-8 text-gray-900  leading-relaxed">
+            <p className="text-lg md:text-xl mb-8 text-gray-900  ">
               Smart and Virtual Pharmacy setups at hospitals to help patients easily get their prescribed medicines
               without hassles – no delays, confusion, or long waits.
             </p>
